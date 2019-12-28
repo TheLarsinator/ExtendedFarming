@@ -1,0 +1,46 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "is_active": {
+      "true": {
+        "model": "extfar:block/sprayer_active"
+      },
+      "false": {
+        "model": "extfar:block/sprayer"
+      }
+    },
+    "facing":{
+      "north": {
+        "submodel": {
+          "hose1": {
+            "model": "extfar:block/hose"
+          }
+        }
+      },
+      "south": {
+        "submodel": {
+          "hose1": {
+            "model": "extfar:block/hose",
+            "y": 180
+          }
+        }
+      },
+      "east": {
+        "submodel": {
+          "hose1": {
+            "model": "extfar:block/hose",
+            "y": 270
+          }
+        }
+      },
+      "west": {
+        "submodel": {
+          "hose1": {
+            "model": "extfar:block/hose",
+            "y": 90
+          }
+        }
+      }
+    }
+  }
+}

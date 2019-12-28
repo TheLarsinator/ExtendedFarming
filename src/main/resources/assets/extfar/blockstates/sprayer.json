@@ -1,0 +1,35 @@
+{
+  "multipart": [
+    { "apply":  {"model":  "extfar:block/sprayer"}},
+    {
+      "when":  {"facing":  "north", "is_active":  true},
+      "apply": { "model": "extfar:block/hose_active", "y": 0  }
+    },
+    {
+      "when":  {"facing":  "north", "is_active":  false},
+      "apply": { "model": "extfar:block/hose", "y": 0 }
+    },
+    {
+      "when":  {"facing":  "south", "is_active":  true},
+      "apply": { "model": "extfar:block/hose_active", "y": 180  }
+    },
+    {
+      "when":  {"facing":  "south", "is_active":  false},
+      "apply": { "model": "extfar:block/hose", "y": 180 }
+    },    {
+      "when":  {"facing":  "west", "is_active":  true},
+      "apply": { "model": "extfar:block/hose_active", "y": 90  }
+    },
+    {
+      "when":  {"facing":  "west", "is_active":  false},
+      "apply": { "model": "extfar:block/hose", "y": 90 }
+    },    {
+      "when":  {"facing":  "east", "is_active":  true},
+      "apply": { "model": "extfar:block/hose_active", "y": 270  }
+    },
+    {
+      "when":  {"facing":  "east", "is_active":  false},
+      "apply": { "model": "extfar:block/hose", "y": 2700 }
+    }
+  ]
+}

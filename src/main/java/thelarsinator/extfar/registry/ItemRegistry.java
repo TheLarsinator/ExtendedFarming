@@ -17,9 +17,7 @@ import static thelarsinator.extfar.Reference.MODID;
 public class ItemRegistry {
 
     //Goat items
-    public static final Item GoatMilkBucket = null;
-
-
+    public static final Item goat_milk_bucket = null;
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {

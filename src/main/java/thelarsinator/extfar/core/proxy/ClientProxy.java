@@ -4,13 +4,15 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import thelarsinator.extfar.registry.EntityRegistry;
+import thelarsinator.extfar.registry.TileEntityRegistry;
 
 public class ClientProxy implements IProxy {
 
     @Override
     public void init() {
-        //Register Entities
+        //Register Renderers
         EntityRegistry.registerEntityRenderers();
+        TileEntityRegistry.registerTileEntityRenderer();
     }
 
     @Override

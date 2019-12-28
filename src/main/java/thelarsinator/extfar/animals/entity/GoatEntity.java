@@ -26,6 +26,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import thelarsinator.extfar.registry.EntityRegistry;
+import thelarsinator.extfar.registry.ItemRegistry;
 
 public class GoatEntity extends AnimalEntity {
     public GoatEntity(EntityType<? extends GoatEntity> type, World worldIn) {
@@ -45,24 +46,24 @@ public class GoatEntity extends AnimalEntity {
 
     protected void registerAttributes() {
         super.registerAttributes();
-        this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10.0D);
-        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double)0.2F);
+        this.getAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(8.0D);
+        this.getAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue((double)0.25F);
     }
 
     protected SoundEvent getAmbientSound() {
-        return SoundEvents.ENTITY_COW_AMBIENT;
+        return SoundEvents.ENTITY_SHEEP_AMBIENT;
     }
 
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return SoundEvents.ENTITY_COW_HURT;
+        return SoundEvents.ENTITY_SHEEP_HURT;
     }
 
     protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_COW_DEATH;
+        return SoundEvents.ENTITY_SHEEP_DEATH;
     }
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
-        this.playSound(SoundEvents.ENTITY_COW_STEP, 0.15F, 1.0F);
+        this.playSound(SoundEvents.ENTITY_SHEEP_STEP, 0.15F, 1.0F);
     }
 
     /**
@@ -78,5 +79,22 @@ public class GoatEntity extends AnimalEntity {
 
     protected float getStandingEyeHeight(Pose poseIn, EntitySize sizeIn) {
         return this.isChild() ? sizeIn.height * 0.95F : 1.3F;
+    }
+
+    public boolean processInteract(PlayerEntity player, Hand hand) {
+        ItemStack itemstack = player.getHeldItem(hand);
+        if (itemstack.getItem() == Items.BUCKET && !player.abilities.isCreativeMode && !this.isChild()) {
+            player.playSound(SoundEvents.ENTITY_COW_MILK, 1.0F, 1.0F);
+            itemstack.shrink(1);
+            if (itemstack.isEmpty()) {
+                player.setHeldItem(hand, new ItemStack(ItemRegistry.goat_milk_bucket));
+            } else if (!player.inventory.addItemStackToInventory(new ItemStack(ItemRegistry.goat_milk_bucket))) {
+                player.dropItem(new ItemStack(ItemRegistry.goat_milk_bucket), false);
+            }
+
+            return true;
+        } else {
+            return super.processInteract(player, hand);
+        }
     }
 }
