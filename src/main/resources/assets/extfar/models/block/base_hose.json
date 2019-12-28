@@ -1,8 +1,7 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
     "textures": {
-        "obsidian": "minecraft:block/obsidian",
-        "gray_concrete": "minecraft:block/blue_wool"
+        "gray_concrete": "minecraft:block/gray_concrete"
     },
     "display": {
         "gui": {
@@ -39,27 +38,15 @@
     "elements": [
         {
             "name": "Hose",
-            "from": [ 0, 0, 7 ], 
+            "from": [ 7, 0, 7 ],
             "to": [ 9, 1, 9 ],
             "faces": {
-                "north": { "texture": "#gray_concrete", "uv": [ 0, 0, 9, 1 ] },
+                "north": { "texture": "#gray_concrete", "uv": [ 0, 0, 2, 1 ] },
+                "west": { "texture": "#gray_concrete", "uv": [ 0, 0, 2, 1 ] },
                 "east": { "texture": "#gray_concrete", "uv": [ 0, 0, 2, 1 ] },
-                "south": { "texture": "#gray_concrete", "uv": [ 0, 0, 9, 1 ] },
-                "up": { "texture": "#gray_concrete", "uv": [ 0, 0, 9, 2 ] },
-                "down": { "texture": "#gray_concrete", "uv": [ 0, 0, 9, 2 ] }
-            }
-        },
-        {
-            "name": "HoseConnector",
-            "from": [ 0, 0, 6 ], 
-            "to": [ 2, 2, 10 ], 
-            "faces": {
-                "north": { "texture": "#obsidian", "uv": [ 0, 0, 2, 2 ] },
-                "east": { "texture": "#obsidian", "uv": [ 0, 0, 4, 2 ] },
-                "south": { "texture": "#obsidian", "uv": [ 0, 0, 2, 2 ] },
-                "west": { "texture": "#obsidian", "uv": [ 0, 0, 4, 2 ] },
-                "up": { "texture": "#obsidian", "uv": [ 0, 5, 2, 9 ] },
-                "down": { "texture": "#obsidian", "uv": [ 0, 0, 2, 4 ] }
+                "south": { "texture": "#gray_concrete", "uv": [ 0, 0, 2, 1 ] },
+                "up": { "texture": "#gray_concrete", "uv": [ 0, 0, 2, 2 ] },
+                "down": { "texture": "#gray_concrete", "uv": [ 0, 0, 2, 2 ] }
             }
         }
     ]

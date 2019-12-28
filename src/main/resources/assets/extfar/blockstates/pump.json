@@ -1,6 +1,6 @@
 {
   "multipart": [
-    { "apply":  {"model":  "extfar:block/sprayer"}},
+    { "apply":  {"model":  "extfar:block/pump"}},
     {
       "when":  {"north_con":  true, "is_active":  true},
       "apply": { "model": "extfar:block/hose_active", "y": 90  }
@@ -30,6 +30,22 @@
     {
       "when":  {"east_con":  "true", "is_active":  false},
       "apply": { "model": "extfar:block/hose", "y": 180 }
+    },
+    {
+      "when":  {"north_pump":  true},
+      "apply": { "model": "extfar:block/pump_hose", "y": 0 }
+    },
+    {
+      "when":  {"west_pump":  true},
+      "apply": { "model": "extfar:block/pump_hose", "y": 270 }
+    },
+    {
+      "when":  {"south_pump":  true},
+      "apply": { "model": "extfar:block/pump_hose", "y": 180 }
+    },
+    {
+      "when":  {"east_pump":  true},
+      "apply": { "model": "extfar:block/pump_hose", "y": 90 }
     }
   ]
 }

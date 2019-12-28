@@ -1,6 +1,7 @@
 {
   "multipart": [
-    { "apply":  {"model":  "extfar:block/sprayer"}},
+    { "when": {"north_con":  false, "south_con":  false, "west_con":  false, "east_con":  false},
+      "apply":  {"model":  "extfar:block/base_hose"}},
     {
       "when":  {"north_con":  true, "is_active":  true},
       "apply": { "model": "extfar:block/hose_active", "y": 90  }
