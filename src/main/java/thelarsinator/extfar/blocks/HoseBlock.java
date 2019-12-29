@@ -11,6 +11,7 @@ import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
@@ -25,7 +26,7 @@ import javax.annotation.Nullable;
 
 public class HoseBlock extends WateringBlockBase {
     private static final VoxelShape SHAPE = VoxelShapes.or(
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D));
+            Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 1.0D, 9.0D));
 
     public static final BooleanProperty OMHOOG = BooleanProperty.create("omhoog");
     public static final BooleanProperty OMLAAG = BooleanProperty.create("omlaag");
@@ -42,6 +43,13 @@ public class HoseBlock extends WateringBlockBase {
         builder.add(OMHOOG);
         builder.add(OMLAAG);
     }
+
+    @Override
+    @Deprecated
+    public boolean isSolid(BlockState state) {
+        return false;
+    }
+
 
     @Override
     public boolean hasTileEntity(BlockState state) {
@@ -84,7 +92,18 @@ public class HoseBlock extends WateringBlockBase {
     @Nonnull
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
-        return SHAPE;
+        VoxelShape out = SHAPE;
+        if(state.get(NORTH_CON))
+            out = VoxelShapes.or(out, Block.makeCuboidShape(7.0D, 0.0D, 0.0D, 9.0D, 1.0D, 9.0D));
+        if(state.get(SOUTH_CON))
+            out = VoxelShapes.or(out, Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 1.0D, 16.0D));
+        if(state.get(WEST_CON))
+            out = VoxelShapes.or(out, Block.makeCuboidShape(0.0D, 0.0D, 7.0D, 9.0D, 1.0D, 9.0D));
+        if(state.get(EAST_CON))
+            out = VoxelShapes.or(out, Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 16.0D, 1.0D, 9.0D));
+        if(state.get(OMHOOG))
+            out = VoxelShapes.or(out, Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 16.0D, 9.0D));
+        return out;
     }
 
     @SuppressWarnings("deprecation")

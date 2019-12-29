@@ -3,7 +3,8 @@
     "textures": {
         "oak_planks": "minecraft:block/oak_planks",
         "mossy_cobblestone": "minecraft:block/mossy_cobblestone",
-        "stone": "minecraft:block/stone"
+        "stone": "minecraft:block/stone",
+        "particle": "minecraft:block/gray_concrete"
     },
     "display": {
         "gui": {

@@ -1,7 +1,8 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
     "textures": {
-        "gray_concrete": "minecraft:block/gray_concrete"
+        "gray_concrete": "minecraft:block/gray_concrete",
+        "particle": "minecraft:block/gray_concrete"
     },
     "display": {
         "gui": {

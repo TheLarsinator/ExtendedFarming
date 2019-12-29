@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sps",
+    "#p#",
+    "CCC"
+  ],
+  "key": {
+    "#": {
+      "item": "extfar:hose"
+    },
+    "p": {
+      "item": "minecraft:oak_planks"
+    },
+    "C": {
+      "item": "minecraft:mossy_cobblestone"
+    },
+    "s": {
+      "item": "minecraft:stone"
+    }
+  },
+  "result": {
+    "item": "extfar:sprayer"
+  }
+}

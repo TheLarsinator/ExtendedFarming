@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "www",
+    "   ",
+    "www"
+  ],
+  "key": {
+    "w": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "extfar:hose",
+    "count": 10
+  }
+}

@@ -29,7 +29,7 @@ import static net.minecraft.block.FarmlandBlock.MOISTURE;
 
 public class SprayerBlock extends WateringBlockBase {
     private static final VoxelShape SHAPE = VoxelShapes.or(
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D),
+            Block.makeCuboidShape(0.0D, -1.0D, 0.0D, 16.0D, 0.0D, 16.0D),
             Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 12.0D, 9.0D));
 
     public static final BooleanProperty OMLAAG = BooleanProperty.create("omlaag");

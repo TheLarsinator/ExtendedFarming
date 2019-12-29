@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "sss",
+    "#p#",
+    "#i#"
+  ],
+  "key": {
+    "#": {
+      "item": "extfar:hose"
+    },
+    "p": {
+      "item": "minecraft:oak_planks"
+    },
+    "i": {
+      "item": "minecraft:iron_block"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "extfar:pump"
+  }
+}
