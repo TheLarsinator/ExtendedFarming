@@ -1,7 +1,10 @@
 {
   "item.extfar.goat_milk_bucket": "Goatmilk Bucket",
-
   "item.extfar.goat_spawn_egg": "Goat Spawn Egg",
+
+  "block.extfar.sprayer": "Sprinkler",
+  "block.extfar.hose": "Hose",
+  "block.extfar.pump": "Pump",
 
   "entity.extfar.goat": "Goat"
 }

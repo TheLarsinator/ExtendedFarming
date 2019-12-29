@@ -33,6 +33,7 @@ public class TileEntityRegistry {
     public static void registerTileEntityRenderer(){
         ClientRegistry.bindTileEntitySpecialRenderer(SprayerTileEntity.class, new SprayerRenderer());
         ClientRegistry.bindTileEntitySpecialRenderer(HoseTileEntity.class, new HoseRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(PumpTileEntity.class, new PumpRenderer());
     }
 
 }

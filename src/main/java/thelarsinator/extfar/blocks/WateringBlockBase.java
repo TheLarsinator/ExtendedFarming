@@ -5,24 +5,24 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 import javax.annotation.Nonnull;
-import java.util.Random;
 
-public abstract class WateringBlockBase extends HorizontalBlock {
+public abstract class WateringBlockBase extends Block {
     public static final BooleanProperty IS_ACTIVE = BooleanProperty.create("is_active");
 
     public static final BooleanProperty EAST_CON = BooleanProperty.create("east_con");
     public static final BooleanProperty WEST_CON = BooleanProperty.create("west_con");
     public static final BooleanProperty NORTH_CON = BooleanProperty.create("north_con");
     public static final BooleanProperty SOUTH_CON = BooleanProperty.create("south_con");
+
+    public static final IntegerProperty WATER_PRESSURE = IntegerProperty.create("water_pressure", 0, 15);
 
     @Override
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
@@ -31,12 +31,7 @@ public abstract class WateringBlockBase extends HorizontalBlock {
         builder.add(NORTH_CON);
         builder.add(SOUTH_CON);
         builder.add(IS_ACTIVE);
-        builder.add(HORIZONTAL_FACING);
-    }
-
-    @Override
-    public BlockState getStateForPlacement(BlockItemUseContext context) {
-        return this.getDefaultState().with(HORIZONTAL_FACING, context.getPlacementHorizontalFacing().getOpposite());
+        builder.add(WATER_PRESSURE);
     }
 
     public WateringBlockBase(Properties properties) {
@@ -50,7 +45,39 @@ public abstract class WateringBlockBase extends HorizontalBlock {
     @Nonnull
     public BlockState updatePostPlacement(@Nonnull BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn,
                                           BlockPos currentPos, BlockPos facingPos) {
-        return checkForConnections(stateIn, worldIn.getWorld(), currentPos);
+        BlockState tempState = checkForConnections(stateIn, worldIn.getWorld(), currentPos);
+        return checkWaterPressure(tempState, worldIn.getWorld(), currentPos);
+    }
+
+    protected BlockState checkWaterPressure(@Nonnull BlockState stateIn, @Nonnull World world, @Nonnull BlockPos pos){
+        int highestPressure = 0;
+        if(stateIn.get(NORTH_CON)){
+            int pres = world.getBlockState(pos.north()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.north()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        if(stateIn.get(SOUTH_CON)){
+            int pres = world.getBlockState(pos.south()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.south()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        if(stateIn.get(EAST_CON)){
+            int pres = world.getBlockState(pos.east()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.east()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        if(stateIn.get(WEST_CON)){
+            int pres = world.getBlockState(pos.west()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.west()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        int water_pressure = Math.max(highestPressure-1, 0);
+        boolean is_active = water_pressure > 0;
+        return stateIn.with(WATER_PRESSURE, water_pressure).with(IS_ACTIVE, is_active);
     }
 
     protected BlockState checkForConnections(@Nonnull BlockState stateIn, @Nonnull World world, @Nonnull BlockPos pos){
@@ -63,27 +90,5 @@ public abstract class WateringBlockBase extends HorizontalBlock {
 
     protected boolean checkIfConnection(@Nonnull World world, @Nonnull BlockPos pos){
         return world.getBlockState(pos).getBlock() instanceof WateringBlockBase;
-    }
-
-    /**
-     * Ticks the block if it's been scheduled
-     */
-    @OnlyIn(Dist.CLIENT)
-    public void animateTick(BlockState stateIn, World world, BlockPos pos, Random rand) {
-        if(!world.getBlockState(pos).get(IS_ACTIVE)){
-            return;
-        }
-        if(stateIn.get(NORTH_CON)){
-            world.setBlockState(pos.north(), world.getBlockState(pos.north()).with(IS_ACTIVE, true), 3);
-        }
-        if(stateIn.get(SOUTH_CON)){
-            world.setBlockState(pos.south(), world.getBlockState(pos.south()).with(IS_ACTIVE, true), 3);
-        }
-        if(stateIn.get(EAST_CON)){
-            world.setBlockState(pos.east(), world.getBlockState(pos.east()).with(IS_ACTIVE, true), 3);
-        }
-        if(stateIn.get(WEST_CON)){
-            world.setBlockState(pos.west(), world.getBlockState(pos.west()).with(IS_ACTIVE, true), 3);
-        }
     }
 }

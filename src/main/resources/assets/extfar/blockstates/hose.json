@@ -31,6 +31,14 @@
     {
       "when":  {"east_con":  "true", "is_active":  false},
       "apply": { "model": "extfar:block/hose", "y": 180 }
+    },
+    {
+      "when":  {"omhoog":  true, "is_active":  true},
+      "apply": { "model": "extfar:block/hose_up_active"  }
+    },
+    {
+      "when":  {"omhoog":  "true", "is_active":  false},
+      "apply": { "model": "extfar:block/hose_up" }
     }
   ]
 }

@@ -27,12 +27,13 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-import static net.minecraft.block.FarmlandBlock.MOISTURE;
-
 public class PumpBlock extends WateringBlockBase {
     private static final VoxelShape SHAPE = VoxelShapes.or(
-            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D),
-            Block.makeCuboidShape(7.0D, 0.0D, 7.0D, 9.0D, 12.0D, 9.0D));
+            Block.makeCuboidShape(5.0D, 0.0D, 5.0D, 11.0D, 6.0D, 11.0D),
+            Block.makeCuboidShape(7.0D, 4.0D, 7.0D, 9.0D, 12.0D, 9.0D),
+            Block.makeCuboidShape(7.0D, 4.0D, 7.0D, 9.0D, 12.0D, 9.0D),
+            Block.makeCuboidShape(-2.0D, 12.0D, 7.0D, 18.0D, 13.0D, 9.0D),
+            Block.makeCuboidShape(7.0D, 12.0D, -2.0D, 9.0D, 13.0D, 18.0D));
 
     public PumpBlock() {
         super(Properties.create(Material.WOOD).hardnessAndResistance(2.0f));
@@ -45,6 +46,7 @@ public class PumpBlock extends WateringBlockBase {
     public static final BooleanProperty WEST_PUMP = BooleanProperty.create("west_pump");
     public static final BooleanProperty NORTH_PUMP = BooleanProperty.create("north_pump");
     public static final BooleanProperty SOUTH_PUMP = BooleanProperty.create("south_pump");
+    public static final BooleanProperty OMLAAG = BooleanProperty.create("omlaag");
 
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         super.fillStateContainer(builder);
@@ -52,6 +54,7 @@ public class PumpBlock extends WateringBlockBase {
         builder.add(WEST_PUMP);
         builder.add(NORTH_PUMP);
         builder.add(SOUTH_PUMP);
+        builder.add(OMLAAG);
     }
 
     @SuppressWarnings("deprecation")
@@ -68,13 +71,16 @@ public class PumpBlock extends WateringBlockBase {
         boolean south_pump = checkIfWater(world, pos.south());
         boolean east_pump = checkIfWater(world, pos.east());
         boolean west_pump = checkIfWater(world, pos.west());
+        boolean is_active = north_pump | south_pump | east_pump | west_pump;
+        int water_pressure = is_active ? 15 : 0;
 
         return stateIn
                 .with(NORTH_PUMP, north_pump)
                 .with(SOUTH_PUMP, south_pump)
                 .with(EAST_PUMP, east_pump)
                 .with(WEST_PUMP, west_pump)
-                .with(IS_ACTIVE, north_pump | south_pump | east_pump | west_pump);
+                .with(IS_ACTIVE, is_active)
+                .with(WATER_PRESSURE, water_pressure);
     }
 
     protected boolean checkIfWater(@Nonnull World world, @Nonnull BlockPos pos){
@@ -104,14 +110,6 @@ public class PumpBlock extends WateringBlockBase {
         return true;
     }
 
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onBlockClicked(BlockState state, World worldIn, BlockPos pos, PlayerEntity player) {
-        worldIn.addParticle(ParticleTypes.SPLASH, pos.getX() + 0.7D, pos.getY()+0.8F, pos.getZ() + 0.7D, (double)0.1, 0.0D, (double)0.1);
-        worldIn.setBlockState(pos, state.with(IS_ACTIVE, !state.get(IS_ACTIVE)));
-        super.onBlockClicked(state, worldIn, pos, player);
-    }
-
     @Nonnull
     @Override
     public BlockRenderLayer getRenderLayer() {
@@ -123,12 +121,6 @@ public class PumpBlock extends WateringBlockBase {
     @Override
     public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
         return SHAPE;
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public void onReplaced(BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos, BlockState newState, boolean isMoving) {
-            super.onReplaced(state, worldIn, pos, newState, isMoving);
     }
 
     /**
@@ -151,5 +143,51 @@ public class PumpBlock extends WateringBlockBase {
         if(stateIn.get(WEST_CON)){
             world.setBlockState(pos.west(), world.getBlockState(pos.west()).with(IS_ACTIVE, true), 3);
         }
+    }
+
+    protected BlockState checkWaterPressure(@Nonnull BlockState stateIn, @Nonnull World world, @Nonnull BlockPos pos){
+        int highestPressure = 0;
+        if(stateIn.get(NORTH_CON)){
+            int pres = world.getBlockState(pos.north()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.north()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        if(stateIn.get(SOUTH_CON)){
+            int pres = world.getBlockState(pos.south()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.south()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        if(stateIn.get(EAST_CON)){
+            int pres = world.getBlockState(pos.east()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.east()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        if(stateIn.get(WEST_CON)){
+            int pres = world.getBlockState(pos.west()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.west()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        if(stateIn.get(OMLAAG)){
+            int pres = world.getBlockState(pos.down()).get(WATER_PRESSURE);
+            if(world.getBlockState(pos.down()).get(WATER_PRESSURE) > highestPressure){
+                highestPressure = pres;
+            }
+        }
+        int water_pressure = Math.max(highestPressure-1, 0);
+        boolean is_active = water_pressure > 0;
+        return stateIn.with(WATER_PRESSURE, water_pressure).with(IS_ACTIVE, is_active);
+    }
+
+    protected BlockState checkForConnections(@Nonnull BlockState stateIn, @Nonnull World world, @Nonnull BlockPos pos){
+        return stateIn
+                .with(NORTH_CON, checkIfConnection(world, pos.north()))
+                .with(SOUTH_CON, checkIfConnection(world, pos.south()))
+                .with(EAST_CON, checkIfConnection(world, pos.east()))
+                .with(WEST_CON, checkIfConnection(world, pos.west()))
+                .with(OMLAAG, checkIfConnection(world, pos.down()));
     }
 }
