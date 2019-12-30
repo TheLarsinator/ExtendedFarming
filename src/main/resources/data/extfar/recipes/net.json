@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "www",
+    " w ",
+    "www"
+  ],
+  "key": {
+    "w": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "extfar:net",
+    "count": 10
+  }
+}
