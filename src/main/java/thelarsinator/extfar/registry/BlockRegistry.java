@@ -26,8 +26,8 @@ public class BlockRegistry {
     public static final Block pump = null;
 
     public static final Block crop_support_stick = null;
-    public static final Block beans = null;
-    public static final Block chilli_pepper = null;
+    public static final CropBlock beans = null;
+    public static final CropBlock chilli_pepper = null;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {

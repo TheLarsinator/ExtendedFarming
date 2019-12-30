@@ -1,6 +1,6 @@
 {
   "parent": "block/crop",
   "textures": {
-    "crop": "extfar:block/beans_stage2"
+    "crop": "extfar:block/chillipepper_stage2"
   }
 }
