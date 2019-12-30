@@ -19,9 +19,19 @@ public class ItemRegistry {
     //Goat items
     public static final Item goat_milk_bucket = null;
 
+    //Farming items
+    public static final Item net = null;
+
+    //Crop seeds
+    public static final Item beans = null;
+    public static final Item chilli_pepper = null;
+
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(new MilkBucketItem(new Item.Properties().group(ItemGroup.MISC).maxStackSize(1)).setRegistryName(MODID, "goat_milk_bucket"));
+        registry.register(new Item(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64)).setRegistryName(MODID, "net"));
+        registry.register(new Item(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64)).setRegistryName(MODID, "beans"));
+        registry.register(new Item(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64)).setRegistryName(MODID, "chilli_pepper"));
     }
 }

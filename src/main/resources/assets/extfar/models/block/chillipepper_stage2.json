@@ -1,0 +1,6 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "extfar:block/beans_stage2"
+  }
+}

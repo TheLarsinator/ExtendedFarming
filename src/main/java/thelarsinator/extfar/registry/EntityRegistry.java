@@ -28,9 +28,6 @@ public class EntityRegistry {
     public static final EntityType<GoatEntity> goat = (EntityType<GoatEntity>) EntityType.Builder.create(GoatEntity::new, CREATURE)
             .size(0.9f, 1.5f).build("").setRegistryName(Reference.MODID,"goat");
 
-
-    public static final Item deer_spawn_egg = null;
-
     private static final EnumSet<Biome.Category> goat_biomes = EnumSet.of(FOREST, PLAINS);
 
     @SubscribeEvent

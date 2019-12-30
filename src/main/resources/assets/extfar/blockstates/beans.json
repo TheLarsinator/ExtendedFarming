@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "age=0": { "model": "extfar:block/beans_stage0" },
+    "age=1": { "model": "extfar:block/beans_stage1" },
+    "age=2": { "model": "extfar:block/beans_stage1" },
+    "age=3": { "model": "extfar:block/beans_stage1" },
+    "age=4": { "model": "extfar:block/beans_stage2" },
+    "age=5": { "model": "extfar:block/beans_stage2" },
+    "age=6": { "model": "extfar:block/beans_stage2" },
+    "age=7": { "model": "extfar:block/beans_stage3" }
+  }
+}

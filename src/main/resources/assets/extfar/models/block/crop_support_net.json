@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "extfar:block/crop_support_net"
+    }
+}

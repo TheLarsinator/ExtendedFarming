@@ -1,0 +1,11 @@
+{
+  "multipart": [
+    { "when": { "has_net": true},
+      "apply":  {"model":  "extfar:block/crop_support_net" }
+    },
+    {
+      "when": { "has_net":  false},
+      "apply": { "model": "extfar:block/crop_support_stick" }
+    }
+  ]
+}

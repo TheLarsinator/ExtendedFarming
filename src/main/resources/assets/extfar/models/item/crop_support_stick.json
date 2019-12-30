@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "extfar:block/crop_support_stick"
+    }
+}
