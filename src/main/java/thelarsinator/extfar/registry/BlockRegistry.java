@@ -24,6 +24,7 @@ public class BlockRegistry {
     public static final Block sprayer = null;
     public static final Block hose = null;
     public static final Block pump = null;
+    public static final Block frier = null;
 
     public static final Block crop_support_stick = null;
     public static final CropBlock beans = null;
@@ -32,9 +33,14 @@ public class BlockRegistry {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
+        //Machines of some sort
         registry.register(new SprayerBlock().setRegistryName(MODID, "sprayer"));
         registry.register(new HoseBlock().setRegistryName(MODID, "hose"));
         registry.register(new PumpBlock().setRegistryName(MODID, "pump"));
+        registry.register(new FrierBlock().setRegistryName(MODID, "frier"));
+
+
+        //Crops
         registry.register(new CropSupportBlock().setRegistryName(MODID, "crop_support_stick"));
         registry.register(new CropBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0F).sound(SoundType.CROP)).setRegistryName(MODID, "beans"));
         registry.register(new CropBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0F).sound(SoundType.CROP)).setRegistryName(MODID, "chilli_pepper"));
@@ -48,6 +54,8 @@ public class BlockRegistry {
                 .setRegistryName(MODID, "sprayer"));
         registry.register(new BlockItem(hose, new Item.Properties().group(ItemGroup.MISC))
                 .setRegistryName(MODID, "hose"));
+        registry.register(new BlockItem(frier, new Item.Properties().group(ItemGroup.MISC))
+                .setRegistryName(MODID, "frier"));
         registry.register(new BlockItem(crop_support_stick, new Item.Properties().group(ItemGroup.MISC))
                 .setRegistryName(MODID, "crop_support_stick"));
         registry.register(new BlockItem(pump, new Item.Properties().group(ItemGroup.MISC).setTEISR(() -> PumpItemRenderer::new))

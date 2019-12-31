@@ -36,7 +36,7 @@ public class PumpBlock extends WateringBlockBase {
             Block.makeCuboidShape(7.0D, 12.0D, -2.0D, 9.0D, 13.0D, 18.0D));
 
     public PumpBlock() {
-        super(Properties.create(Material.WOOD).hardnessAndResistance(2.0f));
+        super(Properties.create(Material.IRON).hardnessAndResistance(6.0f));
         this.setDefaultState(this.stateContainer.getBaseState().with(IS_ACTIVE, false).with(WEST_CON,
                 false).with(EAST_CON, false).with(NORTH_CON, false).with(SOUTH_CON, false)
                 .with(EAST_PUMP, false).with(WEST_PUMP, false).with(NORTH_PUMP, false).with(SOUTH_PUMP, false));

@@ -1,0 +1,142 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "obsidian": "minecraft:block/obsidian",
+        "iron_block": "minecraft:block/iron_block",
+        "spruce_log": "minecraft:block/spruce_log"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Base",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 1, 16 ], 
+            "faces": {
+                "up": { "texture": "#iron_block", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#iron_block", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 1, 13, 16 ], 
+            "faces": {
+                "east": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "west": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "up": { "texture": "#iron_block", "uv": [ 0, 0, 1, 16 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 13, 1 ], 
+            "faces": {
+                "north": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "south": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "up": { "texture": "#iron_block", "uv": [ 0, 0, 16, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 15, 0, 0 ], 
+            "to": [ 16, 13, 16 ], 
+            "faces": {
+                "east": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "west": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "up": { "texture": "#iron_block", "uv": [ 0, 0, 1, 16 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 0, 15 ], 
+            "to": [ 16, 13, 16 ], 
+            "faces": {
+                "north": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "south": { "texture": "#iron_block", "uv": [ 0, 0, 16, 13 ] },
+                "up": { "texture": "#iron_block", "uv": [ 0, 0, 16, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 7, 3, 1 ], 
+            "to": [ 9, 14, 2 ], 
+            "faces": {
+                "north": { "texture": "#obsidian", "uv": [ 0, 0, 2, 11 ] },
+                "east": { "texture": "#obsidian", "uv": [ 0, 0, 1, 11 ] },
+                "south": { "texture": "#obsidian", "uv": [ 0, 0, 2, 11 ] },
+                "west": { "texture": "#obsidian", "uv": [ 0, 0, 1, 11 ] },
+                "up": { "texture": "#obsidian", "uv": [ 0, 0, 2, 1 ] },
+                "down": { "texture": "#obsidian", "uv": [ 0, 0, 2, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 4, 14, 0 ], 
+            "to": [ 12, 17, 1 ], 
+            "faces": {
+                "north": { "texture": "#obsidian", "uv": [ 1, 8, 9, 11 ] },
+                "east": { "texture": "#obsidian", "uv": [ 0, 0, 1, 3 ] },
+                "south": { "texture": "#obsidian", "uv": [ 0, 6, 8, 9 ] },
+                "west": { "texture": "#obsidian", "uv": [ 0, 0, 1, 3 ] },
+                "up": { "texture": "#obsidian", "uv": [ 0, 0, 8, 1 ] },
+                "down": { "texture": "#obsidian", "uv": [ 0, 0, 8, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 5, 1, 2 ], 
+            "to": [ 11, 3, 12 ], 
+            "faces": {
+                "north": { "texture": "#obsidian", "uv": [ 0, 0, 6, 2 ] },
+                "east": { "texture": "#obsidian", "uv": [ 0, 0, 10, 2 ] },
+                "south": { "texture": "#obsidian", "uv": [ 0, 0, 6, 2 ] },
+                "west": { "texture": "#obsidian", "uv": [ 0, 0, 10, 2 ] },
+                "up": { "texture": "#obsidian", "uv": [ 0, 0, 6, 10 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 7, 11, -1 ], 
+            "to": [ 9, 16, 0 ], 
+            "faces": {
+                "north": { "texture": "#spruce_log", "uv": [ 0, 0, 2, 5 ] },
+                "east": { "texture": "#spruce_log", "uv": [ 0, 0, 1, 5 ] },
+                "south": { "texture": "#spruce_log", "uv": [ 0, 0, 2, 5 ] },
+                "west": { "texture": "#spruce_log", "uv": [ 0, 0, 1, 5 ] },
+                "up": { "texture": "#spruce_log", "uv": [ 0, 0, 2, 1 ] },
+                "down": { "texture": "#spruce_log", "uv": [ 0, 0, 2, 1 ] }
+            }
+        }
+    ]
+}
