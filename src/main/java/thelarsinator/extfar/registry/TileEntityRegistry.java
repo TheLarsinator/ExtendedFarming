@@ -14,26 +14,17 @@ import static thelarsinator.extfar.Reference.MODID;
 @ObjectHolder(MODID)
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TileEntityRegistry {
-    public static final TileEntityType<SprayerTileEntity> sprayer = null;
-    public static final TileEntityType<HoseTileEntity> hose = null;
-    public static final TileEntityType<PumpTileEntity> pump = null;
+    public static final TileEntityType<FrierTileEntity> frier = null;
 
     @SuppressWarnings("ConstantConditions")
     @SubscribeEvent
     public static void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
         IForgeRegistry<TileEntityType<?>> registry = event.getRegistry();
-        registry.register(TileEntityType.Builder.create(SprayerTileEntity::new, BlockRegistry.sprayer)
-                .build(null).setRegistryName("sprayer"));
-        registry.register(TileEntityType.Builder.create(HoseTileEntity::new, BlockRegistry.hose)
-                .build(null).setRegistryName("hose"));
-        registry.register(TileEntityType.Builder.create(PumpTileEntity::new, BlockRegistry.pump)
-                .build(null).setRegistryName("pump"));
+        registry.register(TileEntityType.Builder.create(FrierTileEntity::new, BlockRegistry.frier)
+                .build(null).setRegistryName("frier"));
     }
 
     public static void registerTileEntityRenderer(){
-        ClientRegistry.bindTileEntitySpecialRenderer(SprayerTileEntity.class, new SprayerRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(HoseTileEntity.class, new HoseRenderer());
-        ClientRegistry.bindTileEntitySpecialRenderer(PumpTileEntity.class, new PumpRenderer());
+        ClientRegistry.bindTileEntitySpecialRenderer(FrierTileEntity.class, new FrierRenderer());
     }
-
 }

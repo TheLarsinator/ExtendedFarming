@@ -5,8 +5,6 @@ import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.Material;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.tileentity.TileEntity;
@@ -21,7 +19,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import thelarsinator.extfar.tileentity.SprayerTileEntity;
+import thelarsinator.extfar.tileentity.FrierTileEntity;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -95,7 +93,7 @@ public class PumpBlock extends WateringBlockBase {
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return new SprayerTileEntity();
+        return new FrierTileEntity();
     }
 
     @SuppressWarnings("deprecation")

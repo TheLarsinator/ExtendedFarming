@@ -12,8 +12,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.ObjectHolder;
 import thelarsinator.extfar.blocks.*;
-import thelarsinator.extfar.tileentity.PumpItemRenderer;
-import thelarsinator.extfar.tileentity.SprayerItemRenderer;
 
 import static thelarsinator.extfar.Reference.MODID;
 
@@ -29,6 +27,7 @@ public class BlockRegistry {
     public static final Block crop_support_stick = null;
     public static final CropBlock beans = null;
     public static final CropBlock chilli_pepper = null;
+    public static final CropBlock canola = null;
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -39,26 +38,26 @@ public class BlockRegistry {
         registry.register(new PumpBlock().setRegistryName(MODID, "pump"));
         registry.register(new FrierBlock().setRegistryName(MODID, "frier"));
 
-
         //Crops
         registry.register(new CropSupportBlock().setRegistryName(MODID, "crop_support_stick"));
         registry.register(new CropBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0F).sound(SoundType.CROP)).setRegistryName(MODID, "beans"));
         registry.register(new CropBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0F).sound(SoundType.CROP)).setRegistryName(MODID, "chilli_pepper"));
+        registry.register(new CropBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0F).sound(SoundType.CROP)).setRegistryName(MODID, "canola"));
     }
 
     @SuppressWarnings("ConstantConditions")
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
-        registry.register(new BlockItem(sprayer, new Item.Properties().group(ItemGroup.MISC).setTEISR(() -> SprayerItemRenderer::new))
+        registry.register(new BlockItem(sprayer, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
                 .setRegistryName(MODID, "sprayer"));
-        registry.register(new BlockItem(hose, new Item.Properties().group(ItemGroup.MISC))
+        registry.register(new BlockItem(hose, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
                 .setRegistryName(MODID, "hose"));
-        registry.register(new BlockItem(frier, new Item.Properties().group(ItemGroup.MISC))
+        registry.register(new BlockItem(frier, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
                 .setRegistryName(MODID, "frier"));
-        registry.register(new BlockItem(crop_support_stick, new Item.Properties().group(ItemGroup.MISC))
+        registry.register(new BlockItem(crop_support_stick, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
                 .setRegistryName(MODID, "crop_support_stick"));
-        registry.register(new BlockItem(pump, new Item.Properties().group(ItemGroup.MISC).setTEISR(() -> PumpItemRenderer::new))
+        registry.register(new BlockItem(pump, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
                 .setRegistryName(MODID, "pump"));
     }
 }

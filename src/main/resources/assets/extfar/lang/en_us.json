@@ -4,10 +4,16 @@
   "item.extfar.beans": "Beans",
   "item.extfar.chilli_pepper": "Chilli Pepper",
   "item.extfar.net": "Net",
+  "item.extfar.cannister_empty": "Empty Cannister",
+  "item.extfar.cannister_canola_oil": "Canola Oil",
+  "item.extfar.canola_seeds": "Canola Seeds",
+  "item.extfar.raw_fries": "Raw Fries",
+  "item.extfar.fries": "Fries",
 
   "block.extfar.sprayer": "Sprinkler",
   "block.extfar.hose": "Hose",
   "block.extfar.pump": "Pump",
+  "block.extfar.frier": "Deep Frier",
   "block.extfar.crop_support_stick": "Supporting Sticks",
 
   "entity.extfar.goat": "Goat"

@@ -4,7 +4,8 @@
         "obsidian": "minecraft:block/obsidian",
         "gray_terracotta": "minecraft:block/gray_terracotta",
         "iron_block": "minecraft:block/iron_block",
-        "spruce_log": "minecraft:block/spruce_log"
+        "spruce_log": "minecraft:block/spruce_log",
+        "iron_bars": "minecraft:block/iron_bars"
     },
     "display": {
         "gui": {
@@ -136,6 +137,74 @@
                 "west": { "texture": "#spruce_log", "uv": [ 0, 0, 1, 6 ] },
                 "up": { "texture": "#spruce_log", "uv": [ 0, 0, 2, 1 ] },
                 "down": { "texture": "#spruce_log", "uv": [ 0, 0, 2, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 4, 9, 3 ], 
+            "to": [ 12, 10, 13 ], 
+            "faces": {
+                "up": { "texture": "#iron_bars", "uv": [ 1, 0, 9, 10 ] },
+                "down": { "texture": "#iron_bars", "uv": [ 0, 0, 8, 10 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 9, 3 ], 
+            "to": [ 12, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#iron_bars", "uv": [ 0, 0, 9, 7 ] },
+                "south": { "texture": "#iron_bars", "uv": [ 0, 0, 9, 7 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 0, 7 ] },
+                "up": { "texture": "#iron_bars", "uv": [ 0, 0, 9, 0 ] },
+                "down": { "texture": "#iron_bars", "uv": [ 0, 0, 9, 0 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 4, 9, 3 ], 
+            "to": [ 4, 16, 13 ], 
+            "faces": {
+                "east": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 7 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 7 ] },
+                "up": { "texture": "#iron_bars", "uv": [ 0, 0, 0, 10 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 3, 9, 13 ], 
+            "to": [ 13, 16, 13 ], 
+            "faces": {
+                "north": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 7 ] },
+                "east": { "texture": "#iron_bars", "uv": [ 0, 0, 0, 7 ] },
+                "south": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 7 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 0, 7 ] },
+                "up": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 0 ] },
+                "down": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 0 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 12, 9, 3 ], 
+            "to": [ 12, 16, 13 ], 
+            "faces": {
+                "east": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 7 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 10, 7 ] },
+                "up": { "texture": "#iron_bars", "uv": [ 0, 0, 0, 10 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 7, 14, 11 ], 
+            "to": [ 9, 18, 12 ], 
+            "rotation": { "origin": [ 8, 13, 13 ], "axis": "x", "angle": 45.0 },
+            "faces": {
+                "north": { "texture": "#obsidian", "uv": [ 0, 0, 2, 4 ] },
+                "east": { "texture": "#obsidian", "uv": [ 0, 0, 1, 4 ] },
+                "south": { "texture": "#obsidian", "uv": [ 0, 0, 2, 4 ] },
+                "west": { "texture": "#obsidian", "uv": [ 0, 0, 1, 4 ] },
+                "up": { "texture": "#obsidian", "uv": [ 0, 0, 2, 1 ] },
+                "down": { "texture": "#obsidian", "uv": [ 0, 0, 2, 1 ] }
             }
         }
     ]

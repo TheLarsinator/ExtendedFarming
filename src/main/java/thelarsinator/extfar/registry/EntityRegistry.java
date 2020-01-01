@@ -46,7 +46,7 @@ public class EntityRegistry {
     public static void registerSpawnEggs(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
         registry.register(new SpawnEggItem(goat, 0x817700, 0xffffff,
-                new Item.Properties().group(ItemGroup.MISC)).setRegistryName(Reference.MODID, "goat_spawn_egg"));
+                new Item.Properties().group(ExtfarItemGroup.EXT_FAR)).setRegistryName(Reference.MODID, "goat_spawn_egg"));
     }
 
     public static void registerEntityRenderers(){

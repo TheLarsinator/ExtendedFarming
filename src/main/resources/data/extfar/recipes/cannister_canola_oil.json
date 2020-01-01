@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CCC",
+    "CCC",
+    "CGC"
+  ],
+  "key": {
+   "C": {
+      "item": "extfar:canola_seeds"
+    },
+    "G": {
+      "item": "extfar:cannister_empty"
+    }
+  },
+  "result": {
+    "item": "extfar:cannister_canola_oil"
+  }
+}
