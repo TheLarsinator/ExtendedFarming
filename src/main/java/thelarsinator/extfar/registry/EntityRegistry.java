@@ -26,7 +26,7 @@ import static net.minecraft.world.biome.Biome.Category.*;
 @Mod.EventBusSubscriber(modid = Reference.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EntityRegistry {
     public static final EntityType<GoatEntity> goat = (EntityType<GoatEntity>) EntityType.Builder.create(GoatEntity::new, CREATURE)
-            .size(0.9f, 1.5f).build("").setRegistryName(Reference.MODID,"goat");
+            .size(0.4f, 0.9f).build("").setRegistryName(Reference.MODID,"goat");
 
     private static final EnumSet<Biome.Category> goat_biomes = EnumSet.of(FOREST, PLAINS);
 

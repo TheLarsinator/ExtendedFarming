@@ -23,6 +23,7 @@ public class BlockRegistry {
     public static final Block hose = null;
     public static final Block pump = null;
     public static final Block frier = null;
+    public static final Block milking_station = null;
 
     public static final Block crop_support_stick = null;
     public static final CropBlock beans = null;
@@ -37,6 +38,7 @@ public class BlockRegistry {
         registry.register(new HoseBlock().setRegistryName(MODID, "hose"));
         registry.register(new PumpBlock().setRegistryName(MODID, "pump"));
         registry.register(new FrierBlock().setRegistryName(MODID, "frier"));
+        registry.register(new MilkingStationBlock().setRegistryName(MODID, "milking_station"));
 
         //Crops
         registry.register(new CropSupportBlock().setRegistryName(MODID, "crop_support_stick"));
@@ -59,5 +61,7 @@ public class BlockRegistry {
                 .setRegistryName(MODID, "crop_support_stick"));
         registry.register(new BlockItem(pump, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
                 .setRegistryName(MODID, "pump"));
+        registry.register(new BlockItem(milking_station, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
+                .setRegistryName(MODID, "milking_station"));
     }
 }

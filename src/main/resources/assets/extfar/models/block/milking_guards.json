@@ -1,0 +1,111 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "furnace_top": "minecraft:block/furnace_top",
+        "dispenser_front_vertical": "minecraft:block/dispenser_front_vertical",
+        "iron_bars": "minecraft:block/iron_bars"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 0, 1, 0 ], 
+            "to": [ 16, 17, 1 ], 
+            "faces": {
+                "north": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "south": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "up": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] },
+                "down": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 1, 15 ], 
+            "to": [ 16, 17, 16 ], 
+            "faces": {
+                "north": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "south": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "up": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] },
+                "down": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 1, 0 ], 
+            "to": [ 1, 17, 16 ], 
+            "faces": {
+                "east": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "up": { "texture": "#furnace_top", "uv": [ 0, 0, 1, 16 ] },
+                "down": { "texture": "#furnace_top", "uv": [ 0, 0, 1, 16 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 15, 1, 0 ], 
+            "to": [ 16, 17, 16 ], 
+            "faces": {
+                "east": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 16 ] },
+                "up": { "texture": "#furnace_top", "uv": [ 0, 0, 1, 16 ] },
+                "down": { "texture": "#furnace_top", "uv": [ 0, 0, 1, 16 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 6, 1, 6 ], 
+            "to": [ 10, 2, 10 ], 
+            "faces": {
+                "north": { "texture": "#furnace_top", "uv": [ 0, 0, 4, 1 ] },
+                "east": { "texture": "#furnace_top", "uv": [ 0, 0, 4, 1 ] },
+                "south": { "texture": "#furnace_top", "uv": [ 0, 0, 4, 1 ] },
+                "west": { "texture": "#furnace_top", "uv": [ 0, 0, 4, 1 ] },
+                "down": { "texture": "#furnace_top", "uv": [ 0, 0, 4, 4 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 5, 2, 5 ], 
+            "to": [ 11, 4, 11 ], 
+            "faces": {
+                "north": { "texture": "#furnace_top", "uv": [ 0, 0, 6, 2 ] },
+                "east": { "texture": "#furnace_top", "uv": [ 0, 0, 6, 2 ] },
+                "south": { "texture": "#furnace_top", "uv": [ 0, 0, 6, 2 ] },
+                "west": { "texture": "#furnace_top", "uv": [ 0, 0, 6, 2 ] },
+                "up": { "texture": "#dispenser_front_vertical", "uv": [ 5, 5, 11, 11 ] },
+                "down": { "texture": "#furnace_top", "uv": [ 0, 0, 6, 6 ] }
+            }
+        }
+    ]
+}

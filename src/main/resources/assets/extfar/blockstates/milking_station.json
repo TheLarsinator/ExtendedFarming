@@ -1,0 +1,109 @@
+{
+  "multipart": [
+    {
+      "when":  { "facing":  "north" },
+      "apply": { "model": "extfar:block/milking_station", "y": 180  }
+    },
+    {
+      "when":  { "facing":  "south" },
+      "apply": { "model": "extfar:block/milking_station", "y": 0  }
+    },
+    {
+      "when":  { "facing":  "east" },
+      "apply": { "model": "extfar:block/milking_station", "y": 270  }
+    },
+    {
+      "when":  { "facing":  "west" },
+      "apply": { "model": "extfar:block/milking_station", "y": 90  }
+    },
+    {
+      "when":  {"has_goat":  true},
+      "apply": { "model": "extfar:block/milking_guards"  }
+    },
+
+    {
+      "when":  { "facing":  "north","milk_level":  1 },
+      "apply": { "model": "extfar:block/milk_1", "y": 180  }
+    },
+    {
+      "when":  { "facing":  "south","milk_level":  1 },
+      "apply": { "model": "extfar:block/milk_1", "y": 0  }
+    },
+    {
+      "when":  { "facing":  "east","milk_level":  1 },
+      "apply": { "model": "extfar:block/milk_1", "y": 270  }
+    },
+    {
+      "when":  { "facing":  "west","milk_level":  1 },
+      "apply": { "model": "extfar:block/milk_1", "y": 90  }
+    },
+
+    {
+      "when":  { "facing":  "north","milk_level":  2 },
+      "apply": { "model": "extfar:block/milk_2", "y": 180  }
+    },
+    {
+      "when":  { "facing":  "south","milk_level":  2 },
+      "apply": { "model": "extfar:block/milk_2", "y": 0  }
+    },
+    {
+      "when":  { "facing":  "east","milk_level":  2 },
+      "apply": { "model": "extfar:block/milk_2", "y": 270  }
+    },
+    {
+      "when":  { "facing":  "west","milk_level":  2 },
+      "apply": { "model": "extfar:block/milk_2", "y": 90  }
+    },
+
+    {
+      "when":  { "facing":  "north","milk_level":  3 },
+      "apply": { "model": "extfar:block/milk_3", "y": 180  }
+    },
+    {
+      "when":  { "facing":  "south","milk_level":  3 },
+      "apply": { "model": "extfar:block/milk_3", "y": 0  }
+    },
+    {
+      "when":  { "facing":  "east","milk_level":  3 },
+      "apply": { "model": "extfar:block/milk_3", "y": 270  }
+    },
+    {
+      "when":  { "facing":  "west","milk_level":  3 },
+      "apply": { "model": "extfar:block/milk_3", "y": 90  }
+    },
+
+    {
+      "when":  { "facing":  "north","milk_level":  4 },
+      "apply": { "model": "extfar:block/milk_4", "y": 180  }
+    },
+    {
+      "when":  { "facing":  "south","milk_level":  4 },
+      "apply": { "model": "extfar:block/milk_4", "y": 0  }
+    },
+    {
+      "when":  { "facing":  "east","milk_level":  4 },
+      "apply": { "model": "extfar:block/milk_4", "y": 270  }
+    },
+    {
+      "when":  { "facing":  "west","milk_level":  4 },
+      "apply": { "model": "extfar:block/milk_4", "y": 90  }
+    },
+
+    {
+      "when":  { "facing":  "north","milk_level":  5 },
+      "apply": { "model": "extfar:block/milk_5", "y": 180  }
+    },
+    {
+      "when":  { "facing":  "south","milk_level":  5 },
+      "apply": { "model": "extfar:block/milk_5", "y": 0  }
+    },
+    {
+      "when":  { "facing":  "east","milk_level":  5 },
+      "apply": { "model": "extfar:block/milk_5", "y": 270  }
+    },
+    {
+      "when":  { "facing":  "west","milk_level":  5 },
+      "apply": { "model": "extfar:block/milk_5", "y": 90  }
+    }
+  ]
+}
