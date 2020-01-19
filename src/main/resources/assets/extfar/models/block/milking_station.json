@@ -2,7 +2,8 @@
     "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
     "textures": {
         "furnace_top": "minecraft:block/furnace_top",
-        "dispenser_front_vertical": "minecraft:block/dispenser_front_vertical"
+        "dispenser_front_vertical": "minecraft:block/dispenser_front_vertical",
+        "iron_bars": "minecraft:block/iron_bars"
     },
     "display": {
         "gui": {
@@ -45,7 +46,6 @@
                 "north": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] },
                 "east": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] },
                 "south": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] },
-                "west": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 1 ] },
                 "up": { "texture": "#dispenser_front_vertical", "uv": [ 0, 0, 16, 16 ] },
                 "down": { "texture": "#furnace_top", "uv": [ 0, 0, 16, 16 ] }
             }
@@ -105,6 +105,29 @@
                 "west": { "texture": "#furnace_top", "uv": [ 0, 0, 2, 3 ] },
                 "up": { "texture": "#furnace_top", "uv": [ 0, 0, 1, 2 ] },
                 "down": { "texture": "#furnace_top", "uv": [ 0, 0, 1, 2 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 1, 12, 16 ], 
+            "faces": {
+                "north": { "texture": "#iron_bars", "uv": [ 0, 0, 1, 12 ] },
+                "east": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 12 ] },
+                "south": { "texture": "#iron_bars", "uv": [ 0, 0, 1, 12 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 12 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 12, 0 ], 
+            "to": [ 1, 24, 16 ], 
+            "faces": {
+                "north": { "texture": "#iron_bars", "uv": [ 0, 0, 1, 12 ] },
+                "east": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 12 ] },
+                "south": { "texture": "#iron_bars", "uv": [ 0, 0, 1, 12 ] },
+                "west": { "texture": "#iron_bars", "uv": [ 0, 0, 16, 12 ] },
+                "up": { "texture": "#iron_bars", "uv": [ 0, 0, 1, 16 ] }
             }
         }
     ]

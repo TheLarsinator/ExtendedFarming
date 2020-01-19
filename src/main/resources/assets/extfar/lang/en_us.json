@@ -14,6 +14,7 @@
   "block.extfar.hose": "Hose",
   "block.extfar.pump": "Pump",
   "block.extfar.frier": "Deep Frier",
+  "block.extfar.milking_station": "Goat Milking Station",
   "block.extfar.crop_support_stick": "Supporting Sticks",
 
   "entity.extfar.goat": "Goat"

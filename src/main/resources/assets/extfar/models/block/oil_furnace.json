@@ -1,0 +1,168 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "obsidian": "minecraft:block/obsidian",
+        "spruce_planks": "minecraft:block/spruce_planks",
+        "iron_block": "minecraft:block/iron_block",
+        "dispenser_front_vertical": "minecraft:block/dispenser_front_vertical",
+        "black_terracotta": "minecraft:block/black_terracotta"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "LegNW",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 2, 5, 2 ], 
+            "faces": {
+                "north": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "east": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "south": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "west": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "down": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 2 ] }
+            }
+        },
+        {
+            "name": "LegNE",
+            "from": [ 14, 0, 0 ], 
+            "to": [ 16, 5, 2 ], 
+            "faces": {
+                "north": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "east": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "south": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "west": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "down": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 2 ] }
+            }
+        },
+        {
+            "name": "LegSW",
+            "from": [ 0, 0, 14 ], 
+            "to": [ 2, 5, 16 ], 
+            "faces": {
+                "north": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "east": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "south": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "west": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "down": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 2 ] }
+            }
+        },
+        {
+            "name": "LegSE",
+            "from": [ 14, 0, 14 ], 
+            "to": [ 16, 5, 16 ], 
+            "faces": {
+                "north": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "east": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "south": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "west": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 5 ] },
+                "down": { "texture": "#spruce_planks", "uv": [ 0, 0, 2, 2 ] }
+            }
+        },
+        {
+            "name": "Base",
+            "from": [ 0, 5, 0 ], 
+            "to": [ 16, 6, 16 ], 
+            "faces": {
+                "north": { "texture": "#black_terracotta", "uv": [ 0, 0, 16, 1 ] },
+                "east": { "texture": "#black_terracotta", "uv": [ 0, 0, 16, 1 ] },
+                "south": { "texture": "#black_terracotta", "uv": [ 0, 0, 16, 1 ] },
+                "west": { "texture": "#black_terracotta", "uv": [ 0, 0, 16, 1 ] },
+                "up": { "texture": "#black_terracotta", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#black_terracotta", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "Oven1",
+            "from": [ 1, 12, 0 ], 
+            "to": [ 15, 13, 12 ], 
+            "faces": {
+                "north": { "texture": "#iron_block", "uv": [ 1, 0, 15, 1 ] },
+                "east": { "texture": "#iron_block", "uv": [ 0, 0, 12, 1 ] },
+                "south": { "texture": "#iron_block", "uv": [ 0, 0, 14, 1 ] },
+                "west": { "texture": "#iron_block", "uv": [ 0, 0, 12, 1 ] },
+                "up": { "texture": "#iron_block", "uv": [ 1, 1, 15, 13 ] },
+                "down": { "texture": "#iron_block", "uv": [ 1, 1, 15, 13 ] }
+            }
+        },
+        {
+            "name": "Oven2",
+            "from": [ 1, 6, 0 ], 
+            "to": [ 2, 12, 12 ], 
+            "faces": {
+                "east": { "texture": "#iron_block", "uv": [ 1, 1, 13, 7 ] },
+                "south": { "texture": "#iron_block", "uv": [ 0, 0, 1, 6 ] },
+                "west": { "texture": "#iron_block", "uv": [ 1, 1, 13, 7 ] }
+            }
+        },
+        {
+            "name": "Oven3",
+            "from": [ 14, 6, 0 ], 
+            "to": [ 15, 12, 12 ], 
+            "faces": {
+                "east": { "texture": "#iron_block", "uv": [ 1, 1, 13, 7 ] },
+                "south": { "texture": "#iron_block", "uv": [ 0, 0, 1, 6 ] },
+                "west": { "texture": "#iron_block", "uv": [ 1, 1, 13, 7 ] }
+            }
+        },
+        {
+            "name": "Oven4",
+            "from": [ 1, 6, 0 ], 
+            "to": [ 15, 12, 1 ], 
+            "faces": {
+                "north": { "texture": "#iron_block", "uv": [ 1, 1, 15, 7 ] },
+                "south": { "texture": "#iron_block", "uv": [ 1, 1, 15, 7 ] }
+            }
+        },
+        {
+            "name": "Oven5",
+            "from": [ 2, 6, 0 ], 
+            "to": [ 14, 7, 12 ], 
+            "faces": {
+                "south": { "texture": "#iron_block", "uv": [ 0, 0, 12, 1 ] },
+                "up": { "texture": "#dispenser_front_vertical", "uv": [ 2, 3, 14, 15 ] }
+            }
+        },
+        {
+            "name": "Chimney",
+            "from": [ 2, 13, 2 ], 
+            "to": [ 4, 18, 4 ], 
+            "faces": {
+                "north": { "texture": "#obsidian", "uv": [ 0, 0, 2, 5 ] },
+                "east": { "texture": "#obsidian", "uv": [ 0, 0, 2, 5 ] },
+                "south": { "texture": "#obsidian", "uv": [ 0, 0, 2, 5 ] },
+                "west": { "texture": "#obsidian", "uv": [ 0, 0, 2, 5 ] },
+                "up": { "texture": "#obsidian", "uv": [ 0, 0, 2, 2 ] }
+            }
+        }
+    ]
+}

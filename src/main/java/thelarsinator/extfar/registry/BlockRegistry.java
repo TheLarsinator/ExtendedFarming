@@ -5,7 +5,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,6 +23,7 @@ public class BlockRegistry {
     public static final Block pump = null;
     public static final Block frier = null;
     public static final Block milking_station = null;
+    public static final Block oil_furnace = null;
 
     public static final Block crop_support_stick = null;
     public static final CropBlock beans = null;
@@ -39,6 +39,7 @@ public class BlockRegistry {
         registry.register(new PumpBlock().setRegistryName(MODID, "pump"));
         registry.register(new FrierBlock().setRegistryName(MODID, "frier"));
         registry.register(new MilkingStationBlock().setRegistryName(MODID, "milking_station"));
+        //registry.register(new OilFurnaceBlock().setRegistryName(MODID, "oil_furnace"));
 
         //Crops
         registry.register(new CropSupportBlock().setRegistryName(MODID, "crop_support_stick"));
@@ -63,5 +64,8 @@ public class BlockRegistry {
                 .setRegistryName(MODID, "pump"));
         registry.register(new BlockItem(milking_station, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
                 .setRegistryName(MODID, "milking_station"));
+        //registry.register(new BlockItem(oil_furnace, new Item.Properties().group(ExtfarItemGroup.EXT_FAR))
+        //        .setRegistryName(MODID, "oil_furnace"));
+
     }
 }

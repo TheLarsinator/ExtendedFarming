@@ -6,7 +6,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.ItemStack;
@@ -20,14 +19,11 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import thelarsinator.extfar.animals.entity.GoatEntity;
 import thelarsinator.extfar.registry.ItemRegistry;
 
@@ -54,6 +50,12 @@ public class MilkingStationBlock extends HorizontalBlock {
             Block.makeCuboidShape(0.0D, 1.0D, 15.0D, 16.0D, 25.0D, 16.0D));
 
     private static final VoxelShape LID = Block.makeCuboidShape(0.0D, 19.0D, 0.0D, 16.0D, 20.0D, 16.0D);
+
+
+    private static final VoxelShape FENCE_SOUTH = VoxelShapes.or(Block.makeCuboidShape(0, 0, 0, 1, 24, 16), Block.makeCuboidShape(-2, 0, 5, 1, 16, 11));
+    private static final VoxelShape FENCE_NORTH = VoxelShapes.or(Block.makeCuboidShape(15, 0, 0, 16, 24, 16), Block.makeCuboidShape(15, 0, 5, 18, 16, 11));
+    private static final VoxelShape FENCE_WEST = VoxelShapes.or(Block.makeCuboidShape(0, 0, 0, 16, 24, 1), Block.makeCuboidShape(5, 0, -2, 11, 16, 1));
+    private static final VoxelShape FENCE_EAST = VoxelShapes.or(Block.makeCuboidShape(0, 0, 15, 16, 24, 16), Block.makeCuboidShape(5, 0, 15, 11, 16, 18));
 
     private static final VoxelShape SHAPE = VoxelShapes.or(
             Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 1.0D, 16.0D));
@@ -137,6 +139,8 @@ public class MilkingStationBlock extends HorizontalBlock {
         if(state.get(HAS_GOAT)){
             out = VoxelShapes.or(SHAPE, GUARD_SHAPE);
         }
+        out = VoxelShapes.or(out, getFenceHitBox(state));
+
         return out;
     }
 
@@ -148,9 +152,23 @@ public class MilkingStationBlock extends HorizontalBlock {
         if(state.get(HAS_GOAT)){
             out = VoxelShapes.or(out, LID, GUARD_SHAPE_FULL);
         }
+        out = VoxelShapes.or(out, getFenceHitBox(state));
         return out;
     }
 
+    private VoxelShape getFenceHitBox(BlockState state){
+        switch(state.get(HORIZONTAL_FACING)){
+            case NORTH:
+                return FENCE_NORTH;
+            case SOUTH:
+                return FENCE_SOUTH;
+            case EAST:
+                return FENCE_EAST;
+            case WEST:
+                return FENCE_WEST;
+        }
+        return SHAPE;
+    }
 
     @SuppressWarnings("deprecation")
     @Override
